@@ -1,0 +1,35 @@
+<div class="body">
+    <div class="doctor">
+        <div class="name-card row">
+            <div class="info col-md-6 row justify-content-start">
+                <h4 class="col-md-12">
+                    Name: Dr. {{doctorData.firstName + " " + doctorData.lastName}}
+                 </h4>
+                 <h4 class="col-md-12 mt-4">
+                    Location: {{doctorData.location}}
+                </h4>
+            </div>
+            <div class="info col-md-6 row justify-content-end">
+                <h4 class="col-md-12 text-end">Timing: {{doctorData.inTime + " - " + doctorData.outTime}}</h4>
+                <h4 class="col-md-12 text-end">Email: {{doctorData.emailId}}</h4>
+            </div>
+        </div>
+        <div class="appointment-list">
+            <div *ngFor="let apt of aptList" class="appointment-info">
+                <header>
+                    <h2 class="name">
+                        {{apt.patientName}}
+                    </h2>
+                    <span>{{apt.patientAge}}</span>
+                    <div class="float right">
+                        <span>Date: {{apt.date | date: "dd.MM.y"}}</span>
+                        <span>Time: {{apt.time}}</span>
+                    </div>
+                </header>
+                <main>
+                    <h6>Symptom(s): {{apt.symptoms}}</h6>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>

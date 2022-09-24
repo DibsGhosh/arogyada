@@ -1,0 +1,46 @@
+<div class="body">
+    <div class="patient">
+        <div class="name-card row">
+            <div class="info col-md-6 row justify-content-start">
+                <h4 class="col-md-12">
+                   Patient Name: {{patientData.firstName + " " + patientData.lastName}}
+                </h4>
+                <h4 class="col-md-12 mt-4">
+                    Age: {{patientData.age}}
+                </h4>
+            </div>
+            <div class="info col-md-6 row text-end">
+                <h4 class="col-md-12">
+                    City: {{patientData.location}}
+                </h4>
+                <h4 class="col-md-12 mt-4">
+                    Mobile: {{patientData.mobileNumber}}
+                </h4>
+            </div>
+        </div>    
+        <!-- <mat-divider></mat-divider> -->
+        <div class="doctor-list">
+                <div *ngFor="let doc of doctorList" class="doc-info">
+                    <header>
+                        <h2 class="name">
+                            Dr. {{doc.firstName + " " + doc.middleName + " " + doc.lastName}}
+                        </h2>
+                        <span>{{doc.location}},</span>
+                        <span>{{doc.degree}}</span>
+                        <div class="float right">
+                            <span>Experience: {{doc.experience}} years</span>
+                            <span>Fees: {{doc.fees  | currency: 'INR'}}</span>
+                        </div>
+                    </header>
+                    <main>
+                        <h4>In time: {{doc.inTime}}</h4>
+                        <h4>Out time: {{doc.outTime}}</h4>
+                        <div class="float right">
+                            <button mat-raised-button class="btn primarybtn col-md-auto">Book</button>
+                        </div>
+                    </main>
+                    
+                </div>
+        </div>
+    </div>
+</div>

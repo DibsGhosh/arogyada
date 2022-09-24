@@ -1,0 +1,46 @@
+<div class="body">
+    <div class="login">
+        <header>
+            <h1 class="text-center">LogIn</h1>
+            <h6 class="text-center">Enter your credentials</h6>
+        </header>
+
+        <form [formGroup]="login" class="row justify-content-center">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Account Type</mat-label>
+                <mat-select formControlName="accType">
+                    <mat-option value="patient">Patient</mat-option>
+                    <mat-option value="doctor">Doctor</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-md-12">
+                <mat-label>
+                    Username
+                </mat-label>
+                <input matInput type="text" name="" id="" formControlName="userName">
+                <mat-error>
+                    *Please enter value
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill" class="col-md-12">
+                <mat-label>
+                    Password
+                </mat-label>
+                <input matInput type="password" name="" id="" formControlName="password">
+                <mat-error>
+                    *Invalid Password
+                </mat-error>
+            </mat-form-field>
+            <button mat-raised-button class="btn primarybtn" style="width: 92.5%;" (click)="route()" type="submit">Submit</button>
+            <p class="text-center mt-4">
+                New Doctor on website? <a routerLink="/signup/doctor" href="#">SignUp</a>.
+            </p>
+            <p class="text-center">
+                Not a Doctor? <a routerLink="/signup/patient" href="#">click here</a>.
+            </p>
+                
+
+        </form>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CredentialsService } from './services/credetials.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'arogyada';
+  page:boolean = true;
+
+  constructor (private _cred:CredentialsService) {}
+
+  ngOnInit(){
+    this._cred.currentPage$.subscribe((data) => {
+      this.page = data;
+    })
+  }
 }

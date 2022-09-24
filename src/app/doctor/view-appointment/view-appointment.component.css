@@ -1,0 +1,85 @@
+.body{
+    height: max-content;
+    background-image: url("../../../assets/image/pawel-czerwinski--vcE6c-UP9E-unsplash.jpg");
+    background-color: rgba(0, 0, 0, 0.3);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 15vh;
+    display: grid;
+    justify-content: center;
+}
+
+.parent{
+    position: relative;
+}
+
+.child-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.doctor{
+    width: 80vw;
+    height: max-content;
+    padding: 2rem 0;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+
+}
+
+span:not(:last-child){
+    margin-right: 1rem;
+}
+
+.name-card{
+    margin: 0;
+    width: 100%;
+    padding: 0 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    /* background-color: white; */
+}
+
+.appointment-list{
+    padding: 0 5%;
+    display: grid;
+    place-content: center;
+
+}
+
+.appointment-info{
+    width: 70vw;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+h2,h4{
+    margin: 0;
+}
+
+header, main{
+    position: relative;
+}
+
+main{
+    margin-top: 1rem;
+}
+
+.float{
+    position: absolute;
+}
+
+.right{
+    top:0;
+    right:0;
+    margin-right: 1rem;
+}

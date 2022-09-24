@@ -1,0 +1,107 @@
+<div class="body">
+    <div class="sign-up">
+        <header>
+            <h1 class="text-center">Sign Up</h1>
+            <h6 class="text-center">For Doctors</h6>
+        </header>
+
+        <form [formGroup]="doctorDetails" class="row">
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>First Name</mat-label>
+                <input matInput type="text" name="" id="" formControlName="firstName">
+                <mat-error *ngIf="doctorDetails.get('firstName')!.errors!==null && doctorDetails.get('firstName')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Middle Name</mat-label>
+                <input matInput type="text" name="" id="" formControlName="middleName">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Last Name</mat-label>
+                <input matInput type="text" name="" id="" formControlName="lastName">
+                <mat-error *ngIf="doctorDetails.get('lastName')!.errors!==null && doctorDetails.get('lastName')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Degree</mat-label>
+                <mat-select formControlName="degree">
+                        <mat-option *ngFor="let deg of degrees" value="deg.fullName">{{deg.degree}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Experience</mat-label>
+                <input matInput type="number" name="" id="" formControlName="experience">
+                <mat-error *ngIf="doctorDetails.get('experience')!.errors!==null && doctorDetails.get('experience')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Fees</mat-label>
+                <input matInput type="number" name="" id="" formControlName="fees">
+                <mat-error *ngIf="doctorDetails.get('fees')!.errors!==null && doctorDetails.get('fees')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Location</mat-label>
+                <mat-select formControlName="location">
+                        <mat-option *ngFor="let state of location" value="state">{{state}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>In-Time</mat-label>
+                <input matInput type="time" name="" id="" formControlName="inTime">
+                <mat-error *ngIf="doctorDetails.get('inTime')!.errors!==null && doctorDetails.get('inTime')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Out-Time</mat-label>
+                <input matInput type="time" name="" id="" value="{{this.doctorDetails.value.inTime}}" formControlName="outTime">
+                <mat-error *ngIf="doctorDetails.get('outTime')!.errors!==null && doctorDetails.get('outTime')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Email ID</mat-label>
+                <input matInput type="email" name="" id="" formControlName="emailId">
+                <mat-error *ngIf="doctorDetails.get('emailId')!.errors!==null && doctorDetails.get('emailId')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="" id="" formControlName="password">
+                <mat-error *ngIf="doctorDetails.get('password')!.errors!==null && doctorDetails.get('password')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="col-md-4">
+                <mat-label>Re-Password</mat-label>
+                <input matInput type="password" name="" id="" formControlName="rePassword">
+                <mat-error *ngIf="doctorDetails.get('rePassword')!.errors!==null && doctorDetails.get('rePassword')!.errors!['required']">
+                    *Cannot be empty
+                </mat-error>
+            </mat-form-field>
+
+            
+
+            <button class="btn primarybtn mx-auto col-md-2" (click)="save()">Save</button>
+            <p class="text-center mt-4">Already have an account? <a routerLink="/login" href="#">Log In</a></p>
+            <p class="text-center mt-2">Not a Doctor? <a routerLink="/signup/patient" href="#">Click here</a></p>
+        </form>
+    </div>
+</div>
